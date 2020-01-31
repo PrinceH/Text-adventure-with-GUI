@@ -8,7 +8,10 @@ class Enemy:
         self.damage = damage
 
     def is_alive(self):
-        return self.hp > 0
+        if self.hp > 0:
+            return True
+        elif self.hp == 0:
+            return False
     #will print the formatted name, description, hp, and damage to the outbox when used in game_gui
     def __str__(self):
         return "Name: {}\nDescription: {}\nHP: {} \nDamage: {}".format(self.name, self.description, self.hp, self.damage)
@@ -19,7 +22,7 @@ class Gnome(Enemy):
 
 class Stronger_Gnome(Enemy):
     def __init__(self):
-        super().__init__(name="Gnome", description="A big burly gnome. This enemy is larger than normal dwarves.", hp=60, damage=20)
+        super().__init__(name="Large Gnome", description="A big burly gnome. This enemy is larger than normal dwarves.", hp=60, damage=20)
 
 
 class Nymph(Enemy):
